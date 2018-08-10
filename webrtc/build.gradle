@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
+apply plugin: 'com.github.dcendents.android-maven'
+
 android {
     compileSdkVersion 27
 
@@ -24,18 +25,8 @@ android {
 
 }
 
-//apply from: '../jcenter-publish.gradle'
-
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
 }
 
-
-publish {
-    userOrg = 'yom9c'
-    groupId = 'com.sabinetek'
-    artifactId = 'webrtc'
-    publishVersion = 'm67'
-    desc = 'webrtc m67 release'
-    website = 'https://webrtc.org/'
-}
+group='com.github.ztimc'
