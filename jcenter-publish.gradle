@@ -1,0 +1,18 @@
+apply plugin: 'com.novoda.bintray-release'
+
+publish {
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+    bintrayUser = properties.getProperty('BINTRAY_USER')
+    bintrayKey = properties.getProperty('BINTRAY_KEY')
+    dryRun = false
+
+    userOrg = DEVELOPER_ID
+    repoName = 'maven'
+    groupId = PROJ_GROUP
+    artifactId = PROJ_ARTIFACTID
+    publishVersion = PROJ_VERSION
+    desc = PROJ_DESCRIPTION
+    website = PROJ_WEBSITEURL
+}
